@@ -23,38 +23,51 @@ body.dark .certificates h2 {
   margin-top: 60px;
 }
 
+/* Estilo para que el enlace no rompa el diseño */
+.certificate-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.certificate-link:hover {
+  transform: translateY(-10px);
+}
+
 .certificate {
-  background: #ffffff;
+  /* CAMBIO: Fondo rosado pastel en modo claro */
+  background: #ffe0e9;
   padding: 25px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  /* Altura reducida porque ya no hay botón */
   min-height: 380px; 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  border: 1px solid #f3e6e8;
+  box-shadow: 0 10px 30px rgba(200, 107, 133, 0.1);
+  /* CAMBIO: Borde más definido para el rosado */
+  border: 2px solid #f9afc4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Modo oscuro */
 body.dark .certificate {
-  background: #221a1c;
-  border-color: #3d242d;
+  background: #2a1f23;
+  border-color: #593540;
   box-shadow: none;
 }
 
 .certificate:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(200, 107, 133, 0.12);
+  box-shadow: 0 20px 40px rgba(200, 107, 133, 0.2);
 }
 
-/* --- Contenedor de la Imagen del Certificado --- */
+/* --- Contenedor de la Imagen --- */
 .certificateImage {
-  height: 220px; /* Espacio dedicado al diploma */
+  height: 220px;
   border-radius: 20px;
   margin-bottom: 24px;
-  border: 1px solid #f3e6e8;
-  overflow: hidden; /* Fundamental para que la imagen no se salga de las curvas */
-  background: #fdf2f5; 
+  border: 1px solid #f9afc4;
+  overflow: hidden;
+  background: #ffffff; /* Fondo blanco para la imagen */
 }
 
 body.dark .certificateImage {
@@ -65,13 +78,11 @@ body.dark .certificateImage {
 .certificateImage img {
   width: 100%;
   height: 100%;
-  /* cover recorta bordes si es necesario para llenar el espacio. 
-     Si prefieres que se vea el diploma entero, cambia "cover" por "contain" */
-  object-fit: cover; 
+  object-fit: cover;
   transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
-/* Efecto elegante: Zoom sutil en la imagen al pasar el mouse por la tarjeta */
 .certificate:hover .certificateImage img {
   transform: scale(1.05);
 }
@@ -80,7 +91,7 @@ body.dark .certificateImage {
 .certificate h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #2d2d2d;
+  color: #7d2640; /* Texto rosado oscuro para contraste */
   margin-bottom: 10px;
   line-height: 1.3;
 }
@@ -91,8 +102,8 @@ body.dark .certificate h3 {
 
 .certificate p {
   font-size: 15px;
-  color: #777777;
-  margin-bottom: 0; /* Ya no hay botón debajo, así que quitamos este margen */
+  color: #a35a70; /* Color armonizado */
+  margin-bottom: 0;
 }
 
 body.dark .certificate p {
@@ -107,9 +118,5 @@ body.dark .certificate p {
   .certificateGrid {
     grid-template-columns: 1fr;
     gap: 30px;
-  }
-
-  .certificate {
-    min-height: auto;
   }
 }
