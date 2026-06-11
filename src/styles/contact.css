@@ -1,6 +1,6 @@
 /* src/styles/contact.css */
 .contact {
-  padding: 60px 80px; /* Espaciado corregido */
+  padding: 60px 80px; 
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
@@ -96,7 +96,7 @@ body.dark .contactForm textarea {
 @media (max-width: 900px) {
   .contact {
     grid-template-columns: 1fr;
-    padding: 40px 30px; /* Espaciado móvil corregido */
+    padding: 40px 30px; 
   }
 
   .contactLeft h2 {
@@ -106,4 +106,124 @@ body.dark .contactForm textarea {
   .contactForm {
     padding: 30px;
   }
+}
+
+/* --- ESTILOS EXTRAS PARA EL FORMULARIO --- */
+.form-relative {
+  position: relative;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-top: 15px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* --- CAJA DE ÉXITO GIGANTE CORREGIDA --- */
+.success-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* CAMBIO DRÁSTICO: Usamos tu rosa fuerte para que cubra el formulario por completo */
+  background-color: #C86B85; 
+  /* Le ponemos exactamente 40px para que encaje perfecto con las esquinas de tu formulario */
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(200, 107, 133, 0.4);
+  z-index: 10;
+  animation: fadeInModal 0.4s ease-in-out;
+}
+
+body.dark .success-modal {
+  /* En modo oscuro usamos un vino/guinda súper elegante */
+  background-color: #593540; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.success-icon {
+  width: 75px;
+  height: 75px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: #C86B85;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+body.dark .success-icon {
+  background-color: #2a1f23;
+  color: #ffdde7;
+}
+
+.success-title {
+  font-size: 28px;
+  /* Texto en blanco para que resalte brutalmente sobre el fondo rosa */
+  color: #ffffff; 
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+body.dark .success-title {
+  color: #ffdde7;
+}
+
+.success-text {
+  font-size: 16px;
+  /* Blanco con un toquecito rosado para suavizar la lectura */
+  color: #fff0f4; 
+  line-height: 1.6;
+  max-width: 340px;
+  margin-bottom: 30px;
+}
+
+body.dark .success-text {
+  color: #cccccc;
+}
+
+/* Botón Invertido (Fondo blanco, texto rosa) */
+.success-btn {
+  background: #ffffff; 
+  color: #C86B85; 
+  border: none;
+  padding: 14px 35px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+body.dark .success-btn {
+  background: #ffdde7;
+  color: #593540;
+}
+
+.success-btn:hover {
+  background: #ffe0e9;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+body.dark .success-btn:hover {
+  background: #ffffff;
+  color: #C86B85;
+}
+
+/* Animación de aparición suave */
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }

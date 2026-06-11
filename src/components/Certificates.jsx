@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/certificates.css';
 
-// Importación de todas las imágenes
+// Importaciones de imágenes
 import imgOmaped from '../assets/certificados/OMAPED.jpg';
 import imgCiscoRedes from '../assets/certificados/CCNA Redes Empresariales, Seguridad y Automatización.jpg';
 import imgCiscoCCNA from '../assets/certificados/CCNAv7 Switching, Routing, and Wireless Essentials.jpg';
@@ -15,41 +15,68 @@ import imgPronatelBasico from '../assets/certificados/PRONATEL OFFICE- NIVEL BAS
 
 const certificates = [
   { title: "Prácticas Pre-Profesionales", school: "OMAPED", image: imgOmaped },
-  { title: "CCNA: Redes Empresariales, Seg. y Auto.", school: "Cisco Networking Academy", image: imgCiscoRedes },
-  { title: "CCNAv7: Switching, Routing & Wireless", school: "Cisco Networking Academy", image: imgCiscoCCNA },
-  { title: "Introducción a la Ciberseguridad", school: "Cisco Networking Academy", image: imgCiberseguridad },
-  { title: "Introducción a la Ciencia de Datos", school: "Cisco Networking Academy", image: imgCienciaDatos },
-  { title: "Introducción a la IA Moderna", school: "Cisco Networking Academy", image: imgIA },
-  { title: "Operating Systems Basics", school: "Cisco Networking Academy", image: imgOS },
-  { title: "Computadoras y Disp. Móviles", school: "Cisco Networking Academy", image: imgMoviles },
+  { title: "CCNA: Redes Empresariales", school: "Academia Cisco", image: imgCiscoRedes },
+  { title: "CCNAv7: Switching & Routing", school: "Academia Cisco", image: imgCiscoCCNA },
+  { title: "Intro. a la Ciberseguridad", school: "Academia Cisco", image: imgCiberseguridad },
+  { title: "Intro. a la Ciencia de Datos", school: "Academia Cisco", image: imgCienciaDatos },
+  { title: "Intro. a la IA Moderna", school: "Academia Cisco", image: imgIA },
+  { title: "Operating Systems Basics", school: "Academia Cisco", image: imgOS },
+  { title: "Computadoras y Móviles", school: "Academia Cisco", image: imgMoviles },
   { title: "Office - Nivel Intermedio", school: "PRONATEL", image: imgPronatelInter },
   { title: "Office - Nivel Básico", school: "PRONATEL", image: imgPronatelBasico }
 ];
 
 function Certificates() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
+
+  const openModal = (cert) => {
+    setSelectedCert(cert);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden'; 
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedCert(null);
+    document.body.style.overflow = 'auto'; 
+  };
+
   return (
     <section className="certificates" id="certificados">
+      {/* ¡AQUÍ ESTÁ EL TÍTULO QUE BORRÉ POR ERROR! */}
       <p className="sectionTitle">CERTIFICADOS</p>
-      <h2>Cursos y certificaciones</h2>
+      <h2 className="main-title">Cursos y certificaciones</h2>
 
-      <div className="certificateGrid">
+      <div className="cert-grid">
         {certificates.map((item, index) => (
-          /* Enlace directo para abrir la imagen en la misma pestaña */
-          <a 
-            href={item.image} 
-            className="certificate-link" 
-            key={index}
-          >
-            <div className="certificate">
-              <div className="certificateImage">
-                <img src={item.image} alt={`Certificado de ${item.title}`} />
-              </div>
+          <div className="cert-card" key={index}>
+            <div className="cert-info">
               <h3 translate="no">{item.title}</h3>
-              <p>{item.school}</p>
+              <div className="tags">
+                <span className="tag">{item.school}</span>
+              </div>
             </div>
-          </a>
+
+            <button className="btn-view-cert" onClick={() => openModal(item)}>
+              Ver Certificado
+            </button>
+          </div>
         ))}
       </div>
+
+      {/* Ventana Modal a pantalla completa */}
+      {modalOpen && selectedCert && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <button className="modal-close" onClick={closeModal}>✖</button>
+          <img 
+            src={selectedCert.image} 
+            alt={selectedCert.title} 
+            className="modal-image" 
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
     </section>
   );
 }

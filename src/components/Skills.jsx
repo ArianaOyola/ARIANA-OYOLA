@@ -29,8 +29,12 @@ const Skills = () => {
   return (
     <section className="skills-section" id="habilidades">
       <div className="skills-container">
-        <h2 className="section-title">Habilidades</h2>
-        <p className="section-subtitle">Tecnologías y herramientas que domino.</p>
+        
+        {/* Etiqueta rosada pequeña usando la clase global */}
+        <p className="sectionTitle" style={{ marginBottom: "10px" }}>HABILIDADES</p>
+        
+        {/* Título principal que cambia de color según el modo (Claro/Oscuro) */}
+        <h2 className="skills-main-title">Tecnologías y herramientas que domino.</h2>
 
         <div className="skills-grid">
           {misHabilidades.map((habilidad, index) => (
@@ -38,7 +42,6 @@ const Skills = () => {
               <div className="skill-icon">
                 <img src={habilidad.logo} alt={`Logo de ${habilidad.nombre}`} />
               </div>
-              {/* El atributo translate="no" evita traducciones automáticas del navegador */}
               <p className="skill-name" translate="no">{habilidad.nombre}</p>
             </div>
           ))}

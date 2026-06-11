@@ -10,34 +10,19 @@
   text-align: center;
 }
 
-/* --- Títulos y Descripciones --- */
-
-.section-title {
+/* --- Título principal (Blanco / Oscuro) --- */
+.skills-main-title {
   font-size: 42px;
-  margin-bottom: 15px;
-  color: #2d2d2d; /* Oscuro para modo claro */
-  transition: color 0.3s ease;
-}
-
-/* CORRECCIÓN: Título en modo oscuro */
-body.dark .section-title {
-  color: #ffffff; /* Blanco para modo oscuro */
-}
-
-.section-subtitle {
-  font-size: 18px;
-  color: #666; /* Gris oscuro para modo claro */
+  color: #2d2d2d; 
   margin-bottom: 60px;
   transition: color 0.3s ease;
 }
 
-/* CORRECCIÓN: Subtítulo en modo oscuro */
-body.dark .section-subtitle {
-  color: #cccccc; /* Gris claro para modo oscuro */
+body.dark .skills-main-title {
+  color: #ffffff; 
 }
 
 /* --- Tarjetas (Grid) --- */
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -97,8 +82,24 @@ body.dark .skill-name {
   color: #ffdde7;
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .skills-section {
     padding: 40px 20px;
+  }
+  
+  .skills-main-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+  
+  .skill-item {
+    width: 100%; 
+    height: 140px;
   }
 }

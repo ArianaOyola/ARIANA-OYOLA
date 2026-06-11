@@ -1,5 +1,3 @@
-/* src/styles/navbar.css */
-
 nav {
   position: sticky;
   top: 0;
@@ -7,34 +5,30 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 80px; /* Restauramos un grosor normal para la barra morada */
+  padding: 15px 80px; 
   background: #C86B85;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* modo oscuro */
 body.dark nav {
   background: #C86B85;
 }
 
-/* Contenedor del logo */
 .logo {
   display: flex;
   align-items: center;
 }
 
-/* logo - El truco de la escala */
 .logo img {
-  height: 60px; /* Esto dicta el grosor de la barra morada (se mantiene delgada) */
-  transform: scale(2.8); /* ¡Esto hace que el logo se vea casi 3 veces más grande visualmente! */
-  transform-origin: left center; /* Asegura que crezca hacia la derecha y no desacomode el menú */
+  height: 60px; 
+  transform: scale(2.8); 
+  transform-origin: left center; 
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
   transition: 0.3s;
 }
 
-/* texto logo (si lo usas) */
 .logo span {
   display: none;
 }
@@ -47,7 +41,6 @@ body.dark nav {
   color: white;
 }
 
-/* contenedor menú */
 .navContainer {
   display: flex;
   align-items: center;
@@ -58,7 +51,6 @@ body.dark nav {
   border-radius: 0;
 }
 
-/* menú */
 ul {
   display: flex;
   gap: 28px;
@@ -79,7 +71,6 @@ ul a:hover {
   background: rgba(255, 255, 255, 0.16);
 }
 
-/* botón tema */
 .themeBtn {
   width: 48px;
   height: 48px;
@@ -96,7 +87,16 @@ ul a:hover {
   transform: scale(1.05);
 }
 
-/* responsive */
+/* Ocultar el ícono de menú en escritorio */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 1000;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
   nav {
     padding: 15px 30px;
@@ -104,14 +104,37 @@ ul a:hover {
 
   .logo img {
     height: 50px;
-    transform: scale(2.2); /* Escala un poco menor en móviles para no tapar toda la pantalla */
+    transform: scale(2.2); 
+  }
+  
+  .menu-icon {
+    display: block;
   }
 
-  .logo h1 {
-    font-size: 30px;
+  .navContainer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #C86B85;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: none; 
+  }
+
+  body.dark .navContainer {
+    background: #C86B85; 
+  }
+
+  .navContainer.open {
+    display: flex;
   }
 
   ul {
-    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
   }
 }

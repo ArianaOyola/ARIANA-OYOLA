@@ -1,14 +1,14 @@
-/* src/styles/hero.css */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 80px; /* Espaciado corregido */
+  padding: 60px 80px; 
   gap: 80px;
 }
 
 .left {
-  max-width: 550px;
+  /* Aumentamos un poco el ancho máximo para que entren los 3 botones en una línea */
+  max-width: 600px; 
 }
 
 .left h2 {
@@ -24,16 +24,28 @@
 
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap; /* Permite que bajen de línea SOLO si no hay espacio (ej. en celular) */
 }
 
-.buttons button {
-  padding: 16px 32px;
+.buttons .btn {
+  /* Redujimos ligeramente el padding horizontal para que los 3 quepan bien */
+  padding: 14px 22px; 
   border: none;
   cursor: pointer;
   border-radius: 999px;
   background: #C86B85;
   color: white;
+  text-decoration: none; 
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap; /* Evita que el texto del botón se parta en dos líneas */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(200, 107, 133, 0.3);
 }
 
 .right {
@@ -59,18 +71,31 @@ body.dark .photo {
   background: #262626;
 }
 
+/* RESPONSIVE (Celulares y Tablets) */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-    padding: 40px 30px; /* Espaciado móvil corregido */
+    padding: 40px 30px; 
+    text-align: center;
   }
 
   .left h2 {
     font-size: 42px;
   }
 
+  .buttons {
+    justify-content: center;
+  }
+  
+  .buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
   .photo {
-    width: 300px;
-    height: 400px;
+    width: 100%; 
+    max-width: 300px; 
+    height: auto;
+    aspect-ratio: 3/4; 
   }
 }

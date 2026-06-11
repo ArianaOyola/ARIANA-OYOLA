@@ -16,7 +16,7 @@ function About(){
         <p>Apasionada por crear soluciones digitales</p>
         
         <p>
-          Soy estudiante de Ingeniería de Sistemas cursando el noveno ciclo.</p>
+          Soy estudiante de Ingeniería de Sistemas cursando el Decimo ciclo.</p>
           <p>Me enfoco en construir experiencias digitales modernas y funcionales.</p>
 
         <div className="cards">

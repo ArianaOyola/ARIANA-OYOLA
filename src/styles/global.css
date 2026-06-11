@@ -1,76 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 body{
-
-font-family:Poppins;
-
-background:#fff8f9;
-
-color:#333;
-
-transition:.3s;
-
+  font-family: Poppins;
+  background: #fff8f9;
+  color: #333;
+  transition: .3s;
+  /* Eliminamos el overflow-x: hidden de aquí para no romper el 'sticky' del navbar */
 }
 
 body.dark{
-
-background:#18181b;
-
-color:white;
-
+  background: #18181b;
+  color: white;
 }
 
 .sectionTitle{
-
-color:#C86B85;
-
-font-size:14px;
-
-letter-spacing:3px;
-
-margin-bottom:20px;
-
+  color: #C86B85;
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
 .app{
-
-min-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Eliminamos el max-width y overflow-x de aquí también */
 }
+
 main{
-
-flex:1;
-
+  flex: 1;
 }
 
 footer{
-
-width:100vw;
-
-margin-left:
-
-calc(
-50% - 50vw
-);
-
-margin-right:
-
-calc(
-50% - 50vw
-);
-
+  width: 100%; 
 }
