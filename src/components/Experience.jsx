@@ -1,87 +1,52 @@
-const experience=[
+import React from 'react';
+import '../styles/experience.css';
 
-{
-year:"2022",
-title:"Inicio Ingeniería de Sistemas"
-},
+const experience = [
+  {
+    year: "2021",
+    month: "Septiembre",
+    title: "Inicio en Ingeniería de Sistemas"
+  },
+  {
+    year: "2024",
+    month: "Julio - Diciembre",
+    title: "Frutería"
+  },
+  {
+    year: "2025",
+    month: "Enero - Junio",
+    title: "Ecotruly Park / Ecoyoga Village"
+  },
+  {
+    year: "2025",
+    month: "Julio - Septiembre",
+    title: "Programa de Empleo Temporal - Llamkasun Perú"
+  },
+  {
+    year: "2026",
+    month: "Septiembre - Enero",
+    title: "Ing. Web en el Area de OMAPED - Municipalidad de Aucallama"
+  }
+];
 
-{
-year:"2023",
-title:"Desarrollo de proyectos web"
-},
+function Experience() {
+  return (
+    <section className="experience" id="experiencia">
+      <h2 className="sectionTitle">EXPERIENCIA LABORAL</h2>
+      <p>Se detalla la experiencia laboral obtenida en estos años</p>
 
-{
-year:"2024",
-title:"Proyecto Big Data"
-},
-
-{
-year:"2025",
-title:"Sistema Joanis Importadora"
-},
-
-{
-year:"2025",
-title:"Noveno ciclo"
+      <div className="timeline">
+        {experience.map((e, index) => (
+          <div key={index} className="timeCard">
+            <h3>{e.year}</h3>
+            {/* AQUÍ ESTÁ EL MES AGREGADO */}
+            <p className="month">{e.month}</p>
+            <p className="jobTitle">{e.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-]
-
-function Experience(){
-
-return(
-
-<section
-className="experience"
->
-
-<p className="sectionTitle">
-
-EXPERIENCIA
-
-</p>
-
-<h2>
-
-Trayectoria académica
-
-</h2>
-
-<div className="timeline">
-
-{
-
-experience.map((e,index)=>(
-
-<div
-key={index}
-className="timeCard"
->
-
-<h3>
-
-{e.year}
-
-</h3>
-
-<p>
-
-{e.title}
-
-</p>
-
-</div>
-
-))
-
-}
-
-</div>
-
-</section>
-
-)
-
-}
-
-export default Experience
+export default Experience;

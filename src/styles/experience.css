@@ -1,12 +1,16 @@
 /* src/styles/experience.css */
 .experience {
-  padding: 60px 80px; /* Espaciado corregido */
+  padding: 60px 80px; 
   overflow: hidden;
 }
 
 .experience h2 {
   font-size: 42px;
   margin-bottom: 20px;
+}
+
+body.dark .experience h2 {
+  color: #C86B85;
 }
 
 /* contenedor */
@@ -67,15 +71,33 @@
 }
 
 body.dark .timeCard h3 {
-  background: #222;
+  background: #2a1f23; /* Ajustado para modo oscuro */
 }
 
-/* descripción */
+/* descripción base */
 .timeCard p {
   padding: 0 10px;
-  line-height: 1.8;
-  font-size: 16px;
+  line-height: 1.4; /* Reducido un poco para que no quede tan separado */
+  font-size: 15px;
 }
+
+body.dark .timeCard p {
+  color: #cccccc;
+}
+
+/* --- ESTILO NUEVO SOLO PARA EL MES --- */
+.timeCard .month {
+  font-weight: 700;
+  color: #C86B85; /* Tu rosa característico */
+  margin-bottom: 5px; /* Espacio sutil entre mes y cargo */
+  font-size: 13px;
+  text-transform: uppercase; /* Para que se vea más ordenado */
+}
+
+body.dark .timeCard .month {
+  color: #ffdde7;
+}
+/* -------------------------------------- */
 
 /* hover */
 .timeCard:hover {
@@ -94,12 +116,13 @@ body.dark .timeCard h3 {
 /* responsive */
 @media (max-width: 900px) {
   .experience {
-    padding: 40px 30px; /* Espaciado móvil corregido */
+    padding: 40px 30px; 
   }
 
   .timeline {
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
   .timeline::before {

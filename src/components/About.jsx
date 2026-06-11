@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/about.css';
-import fotoSobreMi from '../assets/sobre-mi.jpg'; // 1. Corregido el nombre a tu archivo real FOTO.jpg
+import fotoSobreMi from '../assets/sobre-mi.jpg'; 
 
 function About(){
   return(
@@ -12,14 +12,12 @@ function About(){
       </div>
 
       <div className="aboutText">
-        <p className="sectionTitle">SOBRE MÍ</p>
-        <h2>Apasionada por crear soluciones digitales</h2>
+        <h2 className="sectionTitle">SOBRE MÍ</h2>
+        <p>Apasionada por crear soluciones digitales</p>
         
         <p>
-          Soy estudiante de Ingeniería de Sistemas cursando el noveno ciclo.
-          <br /><br />
-          Me enfoco en construir experiencias digitales modernas y funcionales.
-        </p>
+          Soy estudiante de Ingeniería de Sistemas cursando el noveno ciclo.</p>
+          <p>Me enfoco en construir experiencias digitales modernas y funcionales.</p>
 
         <div className="cards">
           <div className="card">

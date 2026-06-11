@@ -1,64 +1,53 @@
 /* src/styles/projects.css */
 .projects-container {
-  padding: 80px 5%; /* Un poco más compacto */
+  padding: 60px 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .main-title {
   font-size: 2.5rem;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #2d2d2d;
 }
 
 body.dark .main-title { color: #ffffff; }
 
-/* CAMBIO CLAVE: Aquí definimos que entren hasta 3 por fila */
+/* FORZAMOS 3 COLUMNAS EXACTAS */
 .showcase-grid {
-  display: grid;
-  /* minmax(300px, 1fr) asegura que tengan tamaño suficiente pero quepan 3 */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; 
   gap: 25px;
 }
 
 .project-card {
   background: #ffffff;
-  padding: 25px; /* Ajuste para que se vea más compacto */
+  padding: 25px;
   border-radius: 16px;
-  border: 2px solid #a35a70; /* Borde rosa oscuro para modo claro */
+  border: 2px solid #a35a70 !important; /* Rosa oscuro forzado */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
+  min-height: 250px;
 }
 
 body.dark .project-card {
   background: #2a1f23;
-  border: 2px solid #7d2640;
+  border: 2px solid #7d2640 !important;
 }
 
-.project-card:hover { transform: translateY(-5px); }
-
-.project-card h3 { 
-  font-size: 1.4rem; 
-  color: #7d2640; 
-  margin-bottom: 12px; 
-}
+.project-card h3 { font-size: 1.3rem; color: #7d2640; margin-bottom: 10px; }
 body.dark .project-card h3 { color: #ffdde7; }
 
-.project-card p { 
-  font-size: 0.9rem; 
-  color: #555; 
-  margin-bottom: 20px; 
-  line-height: 1.4;
-}
+.project-card p { font-size: 0.85rem; color: #555; margin-bottom: 15px; }
 body.dark .project-card p { color: #ccc; }
 
-.tags { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+.tags { display: flex; gap: 6px; margin-bottom: 15px; flex-wrap: wrap; }
 
 .tag {
   background: #ffe0e9;
-  padding: 3px 10px;
+  padding: 3px 8px;
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: 600;
@@ -75,18 +64,14 @@ body.dark .tag { background: #3d242d; color: #ffdde7; }
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-/* Responsivo */
+/* Responsivo: 2 columnas en tablets, 1 en móviles */
 @media (max-width: 1024px) {
-  .showcase-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 columnas en tablets */
-  }
+  .showcase-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 600px) {
-  .showcase-grid {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-  }
+  .showcase-grid { grid-template-columns: 1fr !important; }
 }
