@@ -1,49 +1,108 @@
-.skills{
+/* src/styles/skills.css */
 
-padding:120px;
-
+/* 1. SECCIÓN PRINCIPAL CON EL PAD UNIFICADO QUE ACORDAMOS */
+.skills-section {
+  padding: 60px 80px; /* Consistencia en el portafolio */
+  background-color: #fafafa; /* Un fondo muy suave opcional */
 }
 
-.skill{
-
-margin-bottom:30px;
-
+.skills-container {
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  margin: 0 auto; /* Centra la sección */
+  text-align: center;
 }
 
-.top{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-bottom:10px;
-
+.section-title {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.bar{
-
-height:12px;
-
-background:#eee;
-
-border-radius:50px;
-
+.section-subtitle {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 60px; /* Espacio antes de la cuadrícula */
 }
 
-.fill{
-
-height:100%;
-
-background:#C86B85;
-
-border-radius:50px;
-
-transition:1.5s;
-
+/* 2. DISEÑO DE LA CUADRÍCULA (GRID) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas responsivas */
+  gap: 40px; /* Espacio entre cada logo */
+  justify-items: center; /* Centra los logos horizontalmente */
+  align-items: center; /* Centra los logos verticalmente */
 }
 
-body.dark .bar{
+/* 3. ESTILOS PARA CADA ÍTEM DE HABILIDAD */
+.skill-item {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 160px; /* Ancho máximo para el ítem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease; /* Suaviza el efecto hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
 
-background:#333;
+/* 4. EFECTO INTERACTIVO (HOVER) */
+.skill-item:hover {
+  transform: translateY(-8px); /* Pequeño salto hacia arriba */
+  box-shadow: 0 15px 30px rgba(200, 107, 133, 0.15); /* Sombra más fuerte y colorida */
+  background-color: #fcfcfc; /* Cambio de fondo muy suave */
+}
 
+/* 5. ESTILOS PARA EL LOGO */
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Espacio antes del nombre */
+}
+
+.skill-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Asegura que el logo se vea entero sin deformarse */
+}
+
+/* 6. ESTILOS PARA EL NOMBRE */
+.skill-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE - Modo Celular
+   ========================================= */
+@media (max-width: 900px) {
+  .skills-section {
+    padding: 40px 30px; /* Padding móvil unificado */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Más columnas en móvil */
+    gap: 25px;
+  }
+
+  .skill-item {
+    padding: 20px;
+    max-width: 140px;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .skill-name {
+    font-size: 14px;
+  }
 }
