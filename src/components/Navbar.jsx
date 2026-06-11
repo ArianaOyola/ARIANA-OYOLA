@@ -6,7 +6,7 @@ function Navbar({ darkMode, toggleTheme }) {
   return (
     <nav>
       <div className="logo">
-        <img src="/logo.png" alt="Ariana Oyola" />
+        <img src="/Logo.png" alt="Ariana Oyola" />
       </div>
       
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
