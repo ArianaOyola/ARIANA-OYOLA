@@ -44,31 +44,46 @@ body.dark .infoCard {
 .contactForm {
   padding: 40px;
   border-radius: 40px;
-  background: linear-gradient(180deg, #fff, #f7e5ea);
+  background: linear-gradient(180deg, #FFF0F4, #FFE0E9);
+  border: 2px solid #F9AFC4; 
   display: flex;
   flex-direction: column;
   gap: 22px;
-  box-shadow: 0 30px 70px rgba(200, 107, 133, 0.15);
+  box-shadow: 0 20px 40px rgba(200, 107, 133, 0.15);
 }
 
 body.dark .contactForm {
-  background: linear-gradient(180deg, #222, #181818);
+  background: linear-gradient(180deg, #3D242D, #2A1F23);
+  border: 2px solid #593540;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .contactForm input,
 .contactForm textarea {
   padding: 22px;
-  border: none;
+  border: 1px solid #ebcad4; 
   border-radius: 22px;
   background: white;
   font-size: 16px;
   outline: none;
+  transition: border-color 0.3s;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: #C86B85;
 }
 
 body.dark .contactForm input,
 body.dark .contactForm textarea {
-  background: #2f2f2f;
+  background: #1a1416; 
+  border: 1px solid #593540;
   color: white;
+}
+
+body.dark .contactForm input:focus,
+body.dark .contactForm textarea:focus {
+  border-color: #C86B85;
 }
 
 .contactForm textarea {
@@ -121,46 +136,60 @@ body.dark .contactForm textarea {
   font-size: 15px;
 }
 
-/* --- CAJA DE ÉXITO GIGANTE CORREGIDA --- */
+/* --- NUEVA CAPA DE FONDO (CUBRE TODO Y DIFUMINA) --- */
 .success-modal {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* CAMBIO DRÁSTICO: Usamos tu rosa fuerte para que cubra el formulario por completo */
-  background-color: #C86B85; 
-  /* Le ponemos exactamente 40px para que encaje perfecto con las esquinas de tu formulario */
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo sutil transparente */
+  backdrop-filter: blur(8px); /* Hace un efecto de cristal esmerilado hermoso */
   border-radius: 40px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(200, 107, 133, 0.4);
+  padding: 20px;
   z-index: 10;
-  animation: fadeInModal 0.4s ease-in-out;
 }
 
 body.dark .success-modal {
-  /* En modo oscuro usamos un vino/guinda súper elegante */
-  background-color: #593540; 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  background-color: rgba(24, 24, 24, 0.5);
+}
+
+/* --- TARJETA DE AVISO PEQUEÑA Y COMPACTA --- */
+.success-card {
+  background-color: #C86B85; /* Tu rosa principal fuerte */
+  padding: 30px 24px;
+  border-radius: 24px;
+  max-width: 320px; /* Ancho bien pequeño y contenido */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(200, 107, 133, 0.3);
+  animation: fadeInModal 0.3s ease-in-out;
+}
+
+body.dark .success-card {
+  background-color: #593540; /* Vino elegante para modo oscuro */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid #7d2640;
 }
 
 .success-icon {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   background-color: #ffffff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 35px;
+  font-size: 28px;
   color: #C86B85;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 body.dark .success-icon {
@@ -169,11 +198,10 @@ body.dark .success-icon {
 }
 
 .success-title {
-  font-size: 28px;
-  /* Texto en blanco para que resalte brutalmente sobre el fondo rosa */
+  font-size: 22px;
   color: #ffffff; 
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 body.dark .success-title {
@@ -181,29 +209,26 @@ body.dark .success-title {
 }
 
 .success-text {
-  font-size: 16px;
-  /* Blanco con un toquecito rosado para suavizar la lectura */
+  font-size: 14px;
   color: #fff0f4; 
-  line-height: 1.6;
-  max-width: 340px;
-  margin-bottom: 30px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 body.dark .success-text {
   color: #cccccc;
 }
 
-/* Botón Invertido (Fondo blanco, texto rosa) */
 .success-btn {
   background: #ffffff; 
   color: #C86B85; 
   border: none;
-  padding: 14px 35px;
+  padding: 10px 30px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 body.dark .success-btn {
@@ -213,8 +238,7 @@ body.dark .success-btn {
 
 .success-btn:hover {
   background: #ffe0e9;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
 }
 
 body.dark .success-btn:hover {
@@ -222,7 +246,6 @@ body.dark .success-btn:hover {
   color: #C86B85;
 }
 
-/* Animación de aparición suave */
 @keyframes fadeInModal {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }

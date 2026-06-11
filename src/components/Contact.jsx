@@ -57,17 +57,19 @@ function Contact() {
           </p>
         )}
 
-        {/* Caja de Éxito (Modal) - AHORA SOLO USA LAS CLASES DEL CSS */}
+        {/* Caja de Éxito - Fondo difuminado con Tarjeta Pequeña y Centrada */}
         {status === 'success' && (
           <div className="success-modal">
-            <div className="success-icon">✨</div>
-            <h3 className="success-title">¡Mensaje Enviado con Éxito!</h3>
-            <p className="success-text">
-              Tu idea ya está en mi bandeja de entrada. Me pondré en contacto contigo lo antes posible. ¡Gracias por escribirme!
-            </p>
-            <button type="button" onClick={() => setStatus('')} className="success-btn">
-              Aceptar
-            </button>
+            <div className="success-card">
+              <div className="success-icon">✨</div>
+              <h3 className="success-title">¡Mensaje Enviado!</h3>
+              <p className="success-text">
+                Tu mensaje ha sido recibido con éxito. Me pondré en contacto contigo pronto.
+              </p>
+              <button type="button" onClick={() => setStatus('')} className="success-btn">
+                Aceptar
+              </button>
+            </div>
           </div>
         )}
       </form>
