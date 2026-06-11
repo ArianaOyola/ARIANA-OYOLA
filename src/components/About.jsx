@@ -13,10 +13,10 @@ function About(){
 
       <div className="aboutText">
         <h2 className="sectionTitle">SOBRE MÍ</h2>
-        <p>Apasionada por crear soluciones digitales</p>
         
         <p>
-          Soy estudiante de Ingeniería de Sistemas cursando el Decimo ciclo.</p>
+          Hola! Soy Ariana Oyola y soy apasionada por crear soluciones digitales.</p>
+          <p>Soy estudiante de Ingeniería de Sistemas cursando el Decimo ciclo.</p>
           <p>Me enfoco en construir experiencias digitales modernas y funcionales.</p>
 
         <div className="cards">
