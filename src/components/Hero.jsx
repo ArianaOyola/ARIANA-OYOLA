@@ -15,7 +15,7 @@ function Hero(){
           {}
           <a href="#proyectos" className="btn">Ver proyectos</a>
           <a href="#contacto" className="btn">Contactarme</a>
-          <a href="/ARIANA OYOLA SILVA -CV" download="ARIANA OYOLA SILVA -CV.pdf" className="btn">
+          <a href="/ARIANA OYOLA SILVA -CV.pdf" download="ARIANA OYOLA SILVA -CV.pdf" className="btn">
             Descargar CV
           </a>
         </div>
