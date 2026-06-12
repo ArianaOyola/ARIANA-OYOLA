@@ -12,10 +12,10 @@ function Hero(){
         </p>
 
         <div className="buttons">
-          {/* A los 3 botones les dejamos solo la clase "btn" para el mismo color */}
+          {}
           <a href="#proyectos" className="btn">Ver proyectos</a>
           <a href="#contacto" className="btn">Contactarme</a>
-          <a href="/cv-ariana-oyola.pdf" download="CV_Ariana_Oyola.pdf" className="btn">
+          <a href="/ARIANA OYOLA SILVA -CV" download="ARIANA OYOLA SILVA -CV.pdf" className="btn">
             Descargar CV
           </a>
         </div>
